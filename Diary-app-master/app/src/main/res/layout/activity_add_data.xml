@@ -60,7 +60,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/shareButtonId"
         android:gravity="center_vertical"
-        android:text="Select Date"
+        android:hint="Select Date"
         android:textSize="20dp" />
 
           <EditText

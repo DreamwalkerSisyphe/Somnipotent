@@ -58,7 +58,7 @@
         android:layout_below="@+id/shareButtonIdUpdate"
         android:layout_toEndOf="@+id/subjectEditTextIdUpdate"
         android:gravity="center_vertical"
-        android:text="Select Date"
+        android:hint="Select Date"
         android:textSize="20dp"/>
 
     <EditText
@@ -74,5 +74,5 @@
         android:gravity="start"
         android:hint="Tell us your dream"
         android:inputType="textMultiLine"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"/>
 </RelativeLayout>

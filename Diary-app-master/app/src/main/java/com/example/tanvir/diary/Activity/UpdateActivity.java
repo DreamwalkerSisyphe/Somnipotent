@@ -51,11 +51,13 @@ public class UpdateActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String sub = intent.getStringExtra("subject");
         String des = intent.getStringExtra("description");
+        String date = intent.getStringExtra("date");
         final String id = intent.getStringExtra("listId");
 
 
         subjectEt.setText(sub);
         descriptionEt.setText(des);
+        mDisplayDate.setText(date);
 
         //for sharing data to social media
         shareBtOnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +79,9 @@ public class UpdateActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
+
 
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override

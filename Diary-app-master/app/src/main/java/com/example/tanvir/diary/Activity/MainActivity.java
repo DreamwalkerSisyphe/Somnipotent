@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("subject",arrayList.get(i).getSubject());
                 intent.putExtra("description",arrayList.get(i).getDescription());
                 intent.putExtra("listId",arrayList.get(i).getId());
+                intent.putExtra("date",arrayList.get(i).getDateTime());
                 startActivity(intent);
             }
         });
