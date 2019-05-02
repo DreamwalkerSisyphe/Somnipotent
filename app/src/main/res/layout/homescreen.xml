@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include
@@ -10,52 +11,52 @@
         layout="@layout/toolbar"/>
 
     <Button
-        android:id="@+id/imageButton2"
-        android:text="Sleep Activity"
-        app:autoSizeTextType="uniform"
-        android:textColor="#FFFFFF"
+        android:id="@+id/sleepActivityButton"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         android:background="@drawable/sleep_image"
-        tools:layout_editor_absoluteX="153dp" />
+        android:text="Sleep Activity"
+        android:textColor="#FFFFFF"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/imageButton4"
-        android:text="Dream Journal"
-        app:autoSizeTextType="uniform"
-        android:textColor="#FFFFFF"
+        android:id="@+id/dreamJournalActivityButton"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         android:background="@drawable/dreamjournal"
+        android:text="Dream Journal"
+        android:textColor="#FFFFFF"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@+id/sleepActivityButton"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/imageButton3"
-        android:text="Reality Checks"
-        app:autoSizeTextType="uniform"
-        android:textColor="#FFFFFF"
+        android:id="@+id/realityCheckActivityButton"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
         android:background="@drawable/realitycheck"
+        android:text="Reality Checks"
+        android:textColor="#FFFFFF"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@+id/dreamJournalActivityButton"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/imageButton5"
-        android:text="Lucid Dreaming Excericses"
-        app:autoSizeTextType="uniform"
-        android:textColor="#FFFFFF"
+        android:id="@+id/lucidDreamExcerciseButton"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
         android:background="@drawable/luciddream_image"
-        tools:layout_editor_absoluteX="177dp" />
+        android:text="Lucid Dreaming Excercises"
+        android:textColor="#FFFFFF"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintTop_toBottomOf="@+id/realityCheckActivityButton"
+        tools:layout_editor_absoluteX="-16dp" />
 
 
 </android.support.constraint.ConstraintLayout>

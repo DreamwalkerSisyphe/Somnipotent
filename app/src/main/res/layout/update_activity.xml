@@ -74,5 +74,6 @@
         android:gravity="start"
         android:hint="Tell us your dream"
         android:inputType="textMultiLine"
-        android:scrollbars="vertical"/>
+        android:scrollbars="vertical"
+        android:layout_marginLeft="0dp" />
 </RelativeLayout>
