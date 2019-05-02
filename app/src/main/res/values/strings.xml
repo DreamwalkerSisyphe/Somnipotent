@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Somnipotent</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_data_view">DataViewActivity</string>
+    <string name="title_activity_add_data">AddDataActivity</string>
+    <string name="about">For logging your dreams.</string>
 </resources>
