@@ -128,7 +128,7 @@ public class UpdateActivity extends AppCompatActivity {
     //this method to clearing top activity and starting new activity
     public void backToMain()
     {
-        Intent intent = new Intent(UpdateActivity.this,MainActivity.class);
+        Intent intent = new Intent(UpdateActivity.this,DreamJournalActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         finish();
         startActivity(intent);

@@ -24,6 +24,12 @@
             android:label="DreamJournalActivity"
             android:parentActivityName=".HomeScreenActivity">
         </activity>
+        <activity
+            android:name=".AddDataActivity"
+            android:label="@string/title_activity_add_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".InstructionActivity"></activity>
     </application>
 
 </manifest>
