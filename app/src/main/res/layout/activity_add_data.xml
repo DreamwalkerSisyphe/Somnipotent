@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffffff"
-    android:id="@+id/dialogId">
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/dialogId"
+    >
 
     <!-- This dialog activity for adding information -->
 
@@ -17,6 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#00000000"
+        android:drawableTint="#FFFFFF"
         android:drawableLeft="@drawable/share"
         android:drawableStart="@drawable/share" />
 
@@ -27,6 +29,7 @@
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/saveButtonId"
         android:background="#00000000"
+        android:textColor="#FFFFFF"
         android:text="cancel" />
 
     <Button
@@ -36,18 +39,24 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="#00000000"
+        android:textColor="#FFFFFF"
         android:text="Save" />
 
     <EditText
         android:id="@+id/subjectEditTextId"
-        android:layout_width="191dp"
-        android:layout_height="72dp"
+        android:layout_width="180dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/shareButtonId"
         android:backgroundTint="#00ffffff"
+        android:textColor="#FFFFFF"
         android:ems="10"
+        android:textColorHint="#FFFFFF"
         android:hint="Title"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         android:maxLength="35"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
@@ -55,25 +64,33 @@
 
     <TextView
         android:id="@+id/tvDateId"
-        android:layout_width="193dp"
-        android:layout_height="74dp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="185dp"
+        android:layout_height="72dp"
         android:layout_below="@+id/shareButtonId"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="20dp"
         android:gravity="center_vertical"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         android:hint="Select Date"
         android:textSize="20dp" />
 
     <EditText
         android:id="@+id/descriptionEditTextId"
-        android:layout_width="match_parent"
-        android:layout_height="447dp"
+        android:layout_width="390dp"
+        android:layout_height="433dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="134dp"
+        android:textColor="#FFFFFF"
         android:backgroundTint="#00ffffff"
         android:ems="10"
         android:gravity="start"
+        android:textColorHint="#FFFFFF"
         android:hint="Tell us your dream"
         android:inputType="textMultiLine"
         android:scrollbars="vertical" />
