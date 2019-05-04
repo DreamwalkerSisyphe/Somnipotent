@@ -9,13 +9,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorbackground">
         <TextView
             android:id="@+id/subjectListViewShapeId"
             android:layout_width="match_parent"
             android:layout_height="39dp"
             android:text="Description"
-            android:textColor="@android:color/background_dark"
+            android:textColor="#FFFFFF"
             android:textSize="20dp"
             android:layout_margin="3dp"
             />
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:text="Date"
-            android:textColor="#808080"
+            android:textColor="#FFFFFF"
             android:textSize="15dp"
             android:layout_margin="3dp"/>
     </LinearLayout>

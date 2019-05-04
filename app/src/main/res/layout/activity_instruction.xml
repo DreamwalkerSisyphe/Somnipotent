@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="InstructionActivity"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    android:background="@color/colorPrimaryDark">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,6 +17,6 @@
             android:layout_height="match_parent"
             android:text="@string/about"
             android:textSize="18dp"
-            android:textColor="#000"/>
+            android:textColor="#FFFFFF"/>
     </ScrollView>
 </LinearLayout>

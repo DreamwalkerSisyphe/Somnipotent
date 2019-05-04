@@ -15,8 +15,8 @@
     <ListView
         android:id="@+id/ListviewId"
         style="@android:style/TextAppearance.DeviceDefault.Widget.Button"
-        android:layout_width="393dp"
-        android:layout_height="522dp"
+        android:layout_width="403dp"
+        android:layout_height="616dp"
         android:background="@color/colorbackground"
         tools:layout_editor_absoluteX="-3dp"
         tools:layout_editor_absoluteY="-1dp">
