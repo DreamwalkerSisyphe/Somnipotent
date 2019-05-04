@@ -1,6 +1,9 @@
 package com.dream.somnipotent;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,18 +11,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dream.somnipotent.SqliteDatabase;
 import com.dream.somnipotent.R;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class AddDataActivity extends AppCompatActivity {
     EditText subjectEt,descriptionEt;
     Button cancelBt,saveBt,shareBt;
     SqliteDatabase mydb;
+
+    private TextView mDisplayDate;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +43,8 @@ public class AddDataActivity extends AppCompatActivity {
         cancelBt = findViewById(R.id.cacelButtonId);
         saveBt = findViewById(R.id.saveButtonId);
         shareBt = findViewById(R.id.shareButtonId);
+
+        mDisplayDate = findViewById(R.id.tvDateId);
 
         shareBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,14 +75,39 @@ public class AddDataActivity extends AppCompatActivity {
             }
         });
 
+        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        AddDataActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int day) {
+                month = month + 1;
+
+                String date = month + "/" + day + "/" + year;
+                mDisplayDate.setText(date);
+            }
+        };
+
     }
 
     //for inserting new data
     public void insertData(){
         long l = -1;
-
-        Date date = new Date();
-        String d = (String) android.text.format.DateFormat.format("dd/MM/yyyy  hh:mm:ss",date);
 
         if(subjectEt.getText().length() == 0){
             Toast.makeText(getApplicationContext(),"You didn't add any subject",Toast.LENGTH_SHORT).show();
@@ -79,7 +115,7 @@ public class AddDataActivity extends AppCompatActivity {
         else{
             l = mydb.insertData(subjectEt.getText().toString(),
                     descriptionEt.getText().toString(),
-                    d);
+                    mDisplayDate.getText().toString());
         }
 
         if(l>=0){
@@ -91,7 +127,7 @@ public class AddDataActivity extends AppCompatActivity {
     }
     public void backToMain()
     {
-        Intent intent = new Intent(AddDataActivity.this,MainActivity.class);
+        Intent intent = new Intent(AddDataActivity.this,DreamJournalActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         finish();
         startActivity(intent);

@@ -10,14 +10,14 @@
     android:paddingTop="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DreamJournalActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_dreamjournal">
 
     <ListView
         android:id="@+id/ListviewId"
         style="@android:style/TextAppearance.DeviceDefault.Widget.Button"
         android:layout_width="393dp"
         android:layout_height="522dp"
-        android:background="#ffffff"
+        android:background="@color/colorbackground"
         tools:layout_editor_absoluteX="-3dp"
         tools:layout_editor_absoluteY="-1dp">
 
