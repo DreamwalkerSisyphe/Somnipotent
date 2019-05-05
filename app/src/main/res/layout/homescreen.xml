@@ -47,12 +47,12 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/lucidDreamExcerciseButton"
+        android:id="@+id/lucidDreamExerciseActivityButton"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/luciddream_image"
-        android:text="Lucid Dreaming Excercises"
+        android:text="Lucid Dreaming Exercises"
         android:textColor="#FFFFFF"
         app:autoSizeTextType="uniform"
         app:layout_constraintTop_toBottomOf="@+id/realityCheckActivityButton"

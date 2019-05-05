@@ -21,14 +21,32 @@
             android:parentActivityName=".HomeScreenActivity">
         </activity>
         <activity android:name=".DreamJournalActivity"
-            android:label="DreamJournalActivity"
+            android:label="Dream Journal"
+            android:parentActivityName=".HomeScreenActivity">
+        </activity>
+        <activity android:name=".RealityCheckActivity"
+            android:label="Reality Checks"
+            android:parentActivityName=".HomeScreenActivity">
+        </activity>
+        <activity android:name=".LucidDreamActivity"
+            android:label="Lucid Dream Exercises"
             android:parentActivityName=".HomeScreenActivity">
         </activity>
         <activity
             android:name=".AddDataActivity"
             android:label="@string/title_activity_add_data"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RCAddDataActivity"
+            android:label="@string/title_activity_add_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LDEAddDataActivity"
+            android:label="AddDataActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UpdateActivity" />
+        <activity android:name=".RCUpdateActivity" />
+        <activity android:name=".LDEUpdateActivity" />
         <activity android:name=".InstructionActivity"></activity>
     </application>
 

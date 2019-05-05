@@ -37,6 +37,24 @@ public class HomeScreenActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button RealityCheckButton = findViewById(R.id.realityCheckActivityButton);
+        RealityCheckButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreenActivity.this, RealityCheckActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button LucidDreamButton = findViewById(R.id.lucidDreamExerciseActivityButton);
+        LucidDreamButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeScreenActivity.this, LucidDreamActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
