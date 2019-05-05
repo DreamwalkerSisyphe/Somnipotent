@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/ldedialogId"
+    >
+
+    <!-- This dialog activity for adding information -->
+
+    <Button
+        android:id="@+id/ldeshareButtonId"
+        android:layout_width="42dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000"
+        android:drawableTint="#FFFFFF"
+        android:drawableLeft="@drawable/share"
+        android:drawableStart="@drawable/share" />
+
+    <Button
+        android:id="@+id/ldecacelButtonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/saveButtonId"
+        android:background="#00000000"
+        android:textColor="#FFFFFF"
+        android:text="cancel" />
+
+    <Button
+        android:id="@+id/ldesaveButtonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        android:textColor="#FFFFFF"
+        android:text="Save" />
+
+    <EditText
+        android:id="@+id/ldesubjectEditTextId"
+        android:layout_width="180dp"
+        android:layout_height="71dp"
+        android:layout_alignStart="@+id/ldedescriptionEditTextId"
+        android:layout_below="@+id/ldeshareButtonId"
+        android:backgroundTint="#00ffffff"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName"
+        android:maxLength="35"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
+
+    <EditText
+        android:id="@+id/ldedescriptionEditTextId"
+        android:layout_width="390dp"
+        android:layout_height="433dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="134dp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00ffffff"
+        android:ems="10"
+        android:gravity="start"
+        android:textColorHint="#FFFFFF"
+        android:hint="Describe the exercise used to induce a lucid dream."
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>
