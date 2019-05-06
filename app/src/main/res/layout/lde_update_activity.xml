@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/ldecacelButtonIdUpdate"
         android:background="@color/colorPrimaryDark"
-        android:drawableTint="#FFFFFF"
+        android:drawableTint="@color/colorAccent"
         android:drawableLeft="@drawable/share"
         android:drawableStart="@drawable/share" />
 
@@ -27,7 +27,7 @@
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/ldesaveButtonIdUpdate"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:text="cancel" />
 
     <Button
@@ -37,7 +37,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="@color/colorPrimaryDark"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:text="Update" />
 
     <EditText
@@ -52,7 +52,7 @@
         android:textColor="#FFFFFF"
         android:background="@color/colorPrimaryDark"
         android:layout_marginTop="49dp"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="@color/colorAccent"
         android:ems="10"
         android:hint="Title"
         android:inputType="textPersonName"
@@ -68,11 +68,11 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="134dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:background="@color/colorPrimaryDark"
         android:ems="10"
         android:gravity="start"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="@color/colorAccent"
         android:hint="Describe the exercise used to induce a lucid dream.."
         android:inputType="textMultiLine"
         android:scrollbars="vertical" />

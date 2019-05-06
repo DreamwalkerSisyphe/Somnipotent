@@ -10,17 +10,17 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <Button
-        android:id="@+id/sleepActivityButton"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/sleep_image"
-        android:text="Sleep Activity"
-        android:textColor="#FFFFFF"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <Button
         android:id="@+id/dreamJournalActivityButton"
@@ -29,9 +29,9 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/dreamjournal"
         android:text="Dream Journal"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         app:autoSizeTextType="uniform"
-        app:layout_constraintTop_toBottomOf="@+id/sleepActivityButton"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
@@ -41,7 +41,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/realitycheck"
         android:text="Reality Checks"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         app:autoSizeTextType="uniform"
         app:layout_constraintTop_toBottomOf="@+id/dreamJournalActivityButton"
         tools:layout_editor_absoluteX="0dp" />
@@ -53,7 +53,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/luciddream_image"
         android:text="Lucid Dreaming Exercises"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         app:autoSizeTextType="uniform"
         app:layout_constraintTop_toBottomOf="@+id/realityCheckActivityButton"
         tools:layout_editor_absoluteX="-16dp" />
