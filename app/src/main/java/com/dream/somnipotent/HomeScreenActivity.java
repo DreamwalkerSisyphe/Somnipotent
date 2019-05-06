@@ -21,14 +21,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button SleepActivityButton = findViewById(R.id.sleepActivityButton);
-        SleepActivityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Something
-            }
-        });
-
         Button DreamLogButton = findViewById(R.id.dreamJournalActivityButton);
         DreamLogButton.setOnClickListener(new View.OnClickListener() {
             @Override

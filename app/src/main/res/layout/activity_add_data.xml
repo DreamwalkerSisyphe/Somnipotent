@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#00000000"
-        android:drawableTint="#FFFFFF"
+        android:drawableTint="@color/colorAccent"
         android:drawableLeft="@drawable/share"
         android:drawableStart="@drawable/share" />
 
@@ -29,7 +29,7 @@
         android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/saveButtonId"
         android:background="#00000000"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:text="cancel" />
 
     <Button
@@ -39,7 +39,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="#00000000"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:text="Save" />
 
     <EditText
@@ -51,9 +51,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/shareButtonId"
         android:backgroundTint="#00ffffff"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:ems="10"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="@color/colorAccent"
         android:hint="Title"
         android:inputType="textPersonName"
         android:textSize="20dp"
@@ -72,8 +72,8 @@
         android:layout_marginTop="-3dp"
         android:layout_marginEnd="20dp"
         android:gravity="center_vertical"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
         android:hint="Select Date"
         android:textSize="20dp" />
 
@@ -86,12 +86,12 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="134dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:backgroundTint="#00ffffff"
         android:ems="10"
         android:gravity="start"
-        android:textColorHint="#FFFFFF"
-        android:hint="Tell us your dream"
+        android:textColorHint="@color/colorAccent"
+        android:hint="Write about your dream."
         android:inputType="textMultiLine"
         android:scrollbars="vertical" />
 

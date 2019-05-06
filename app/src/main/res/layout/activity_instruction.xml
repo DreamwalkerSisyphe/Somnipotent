@@ -17,6 +17,6 @@
             android:layout_height="match_parent"
             android:text="@string/about"
             android:textSize="18dp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="@color/colorAccent"/>
     </ScrollView>
 </LinearLayout>

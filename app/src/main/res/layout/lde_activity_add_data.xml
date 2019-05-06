@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="#00000000"
-        android:drawableTint="#FFFFFF"
+        android:drawableTint="@color/colorAccent"
         android:drawableLeft="@drawable/share"
         android:drawableStart="@drawable/share" />
 
@@ -27,10 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="1dp"
         android:layout_toStartOf="@+id/saveButtonId"
+        android:layout_toEndOf="@+id/ldeshareButtonId"
         android:background="#00000000"
-        android:textColor="#FFFFFF"
-        android:text="cancel" />
+        android:text="cancel"
+        android:textColor="@color/colorAccent" />
 
     <Button
         android:id="@+id/ldesaveButtonId"
@@ -39,7 +42,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:background="#00000000"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:text="Save" />
 
     <EditText
@@ -53,8 +56,8 @@
         android:hint="Title"
         android:inputType="textPersonName"
         android:maxLength="35"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
         android:textSize="20dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
@@ -69,11 +72,11 @@
         android:layout_marginStart="11dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="134dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/colorAccent"
         android:backgroundTint="#00ffffff"
         android:ems="10"
         android:gravity="start"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="@color/colorAccent"
         android:hint="Describe the exercise used to induce a lucid dream."
         android:inputType="textMultiLine"
         android:scrollbars="vertical" />

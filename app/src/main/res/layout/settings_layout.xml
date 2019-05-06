@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,25 +8,91 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
+        layout="@layout/toolbar" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/wakeuptext"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Reality Check Notifications"
+        android:layout_marginTop="40dp"
+        android:text="Wake Up Time: "
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+    <TextView
+        android:id="@+id/wakeuptime"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:text="8:00 AM"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/wakeuptext"
+        app:layout_constraintTop_toTopOf="@+id/wakeuptext" />
+
+    <Button
+        android:id="@+id/wakeuptimechange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="12dp"
+        android:color="@color/colorAccent"
+        android:text="change"
+        app:layout_constraintStart_toEndOf="@+id/wakeuptime"
+        app:layout_constraintTop_toTopOf="@+id/wakeuptime" />
+
+    <TextView
+        android:id="@+id/sleeptext"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+
+        android:layout_marginTop="20dp"
+        android:text="Sleep Time: "
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wakeuptext" />
+
+    <TextView
+        android:id="@+id/sleeptime"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:text="9:00 PM"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sleeptext"
+        app:layout_constraintTop_toTopOf="@+id/sleeptext" />
+
+    <Button
+        android:id="@+id/sleeptimechange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:color="@color/colorAccent"
+        android:text="change"
+        app:layout_constraintStart_toEndOf="@+id/sleeptime"
+        app:layout_constraintTop_toTopOf="@+id/sleeptime" />
+
     <Switch
-        android:id="@+id/switch4"
+        android:id="@+id/rcSwitch"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Reality Check Notifications"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleeptext" />
+
+    <Switch
+        android:id="@+id/ldSwitch"
         android:layout_width="250dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
@@ -39,10 +104,10 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+        app:layout_constraintTop_toBottomOf="@+id/rcSwitch" />
 
     <Switch
-        android:id="@+id/switch5"
+        android:id="@+id/debugSwitch"
         android:layout_width="250dp"
         android:layout_height="75dp"
         android:layout_marginStart="8dp"
@@ -54,7 +119,7 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch4" />
+        app:layout_constraintTop_toBottomOf="@+id/ldSwitch" />
 
 
 </android.support.constraint.ConstraintLayout>
