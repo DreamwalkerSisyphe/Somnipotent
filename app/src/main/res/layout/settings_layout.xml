@@ -42,7 +42,9 @@
         android:color="@color/colorAccent"
         android:text="change"
         app:layout_constraintStart_toEndOf="@+id/wakeuptime"
-        app:layout_constraintTop_toTopOf="@+id/wakeuptime" />
+        app:layout_constraintTop_toTopOf="@+id/wakeuptime"
+        android:background="@drawable/my_button_bg"
+        android:textColor="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/sleeptext"
@@ -76,9 +78,12 @@
         android:color="@color/colorAccent"
         android:text="change"
         app:layout_constraintStart_toEndOf="@+id/sleeptime"
-        app:layout_constraintTop_toTopOf="@+id/sleeptime" />
+        app:layout_constraintTop_toTopOf="@+id/sleeptime"
+        android:background="@drawable/my_button_bg"
+        android:textColor="@color/colorAccent"/>
 
     <Switch
+
         android:id="@+id/rcSwitch"
         android:layout_width="250dp"
         android:layout_height="75dp"
