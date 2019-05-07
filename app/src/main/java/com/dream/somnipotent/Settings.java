@@ -1,8 +1,15 @@
 package com.dream.somnipotent;
 
+import android.app.AlarmManager;
+import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -42,22 +49,27 @@ public class Settings extends AppCompatActivity {
         wakebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar mcurrentTime = Calendar.getInstance();
+                final Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);
-                String ampm;
+
                 TimePickerDialog mTimePicker;
                 mTimePicker = new TimePickerDialog(Settings.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        mcurrentTime.set(Calendar.HOUR_OF_DAY, selectedHour);
+                        mcurrentTime.set(Calendar.MINUTE, selectedMinute);
+                        mcurrentTime.set(Calendar.SECOND, 1);
                         prefEditor.putInt("wakehour", selectedHour);
                         prefEditor.putInt("wakeminute", selectedMinute);
                         prefEditor.commit();
                         waketext.setText(getFormattedTime(selectedHour, selectedMinute));
+                        sendChannelOne(mcurrentTime);
                     }
                 }, hour, minute, false);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
+
             }
         });
 
@@ -68,7 +80,7 @@ public class Settings extends AppCompatActivity {
         sleepbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar mcurrentTime = Calendar.getInstance();
+                final Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);
                 TimePickerDialog mTimePicker;
@@ -79,6 +91,12 @@ public class Settings extends AppCompatActivity {
                         prefEditor.putInt("sleepminute", selectedMinute);
                         prefEditor.commit();
                         sleeptext.setText(getFormattedTime(selectedHour, selectedMinute));
+                        if(sharedPref.getBoolean("ldswitch", true)) {
+                            mcurrentTime.set(Calendar.HOUR_OF_DAY, selectedHour - 1);
+                            mcurrentTime.set(Calendar.MINUTE, selectedMinute);
+                            mcurrentTime.set(Calendar.SECOND, 1);
+                            sendChannelTwo(mcurrentTime);
+                        }
                     }
                 }, hour, minute, false);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
@@ -93,6 +111,20 @@ public class Settings extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 prefEditor.putBoolean("rcswitch", isChecked);
                 prefEditor.commit();
+                if(isChecked) {
+                    final Calendar mcurrentTime = Calendar.getInstance();
+                    int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                    int minute = mcurrentTime.get(Calendar.MINUTE);
+                    int randomhour = (int) (Math.random() * (sharedPref.getInt("sleephour", 21) - 1) + (sharedPref.getInt("wakehour", 8) + 1));
+                    int randomminute = (int) (Math.random() * 59 + 0);
+                    mcurrentTime.set(Calendar.HOUR_OF_DAY, randomhour);
+                    mcurrentTime.set(Calendar.MINUTE, randomminute);
+                    mcurrentTime.set(Calendar.SECOND, 1);
+                    sendChannelThree(mcurrentTime);
+                }
+                else{
+                    cancelChannelThree();
+                }
             }
         });
 
@@ -103,6 +135,16 @@ public class Settings extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 prefEditor.putBoolean("ldswitch", isChecked);
                 prefEditor.commit();
+                if(isChecked){
+                    final Calendar mcurrentTime = Calendar.getInstance();
+                    mcurrentTime.set(Calendar.HOUR_OF_DAY, sharedPref.getInt("sleephour", 9) - 1);
+                    mcurrentTime.set(Calendar.MINUTE, sharedPref.getInt("sleepminute", 0));
+                    mcurrentTime.set(Calendar.SECOND, 1);
+                    sendChannelTwo(mcurrentTime);
+                }
+                else{
+                    cancelChannelTwo();
+                }
             }
         });
 
@@ -150,5 +192,59 @@ public class Settings extends AppCompatActivity {
             return hour+12 + ":" + String.format("%02d", minute) + " AM";
         }
         return "";
+    }
+
+    private void sendChannelOne(Calendar c){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, ChannelOneAlarm.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+
+        if(c.before(Calendar.getInstance()))
+            c.add(Calendar.DATE,1);
+
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+
+    private void sendChannelTwo(Calendar c){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, ChannelTwoAlaram.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+
+        if(c.before(Calendar.getInstance()))
+            c.add(Calendar.DATE,1);
+
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
+
+    private void sendChannelThree(Calendar c){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, ChannelThreeAlarm.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+
+        if(c.before(Calendar.getInstance()))
+            c.add(Calendar.DATE,1);
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
+    }
+
+    private void cancelChannelOne(){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, ChannelOneAlarm.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        alarmManager.cancel(pendingIntent);
+    }
+
+    private void cancelChannelTwo(){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, ChannelTwoAlaram.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        alarmManager.cancel(pendingIntent);
+    }
+
+    private void cancelChannelThree(){
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, ChannelThreeAlarm.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+        alarmManager.cancel(pendingIntent);
     }
 }
