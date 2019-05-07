@@ -2,7 +2,9 @@ package com.dream.somnipotent;
 
 import android.app.ActionBar;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -23,6 +25,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.dream.somnipotent.ChannelThreeAlarm;
 
 import com.dream.somnipotent.RCSqliteDatabase;
 import com.dream.somnipotent.RCInformation;
@@ -66,6 +69,23 @@ public class RealityCheckActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(RealityCheckActivity.this,RCAddDataActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton debugButton = (FloatingActionButton) findViewById(R.id.debugButton);
+
+        final SharedPreferences sharedPref = getSharedPreferences("com.dream.somnipotent.settings",MODE_PRIVATE);
+        if(sharedPref.getBoolean("debugswitch", false))
+            debugButton.show();
+        else
+            debugButton.hide();
+
+        debugButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChannelThreeAlarm cta = new ChannelThreeAlarm();
+                Intent intent = new Intent(RealityCheckActivity.this, ChannelThreeAlarm.class);
+                cta.onReceive(RealityCheckActivity.this, intent);
             }
         });
 
