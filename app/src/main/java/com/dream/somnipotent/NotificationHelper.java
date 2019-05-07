@@ -109,7 +109,8 @@ public class NotificationHelper extends ContextWrapper {
                 .setContentTitle("Check Reality!")
                 .setContentText("Use a reality check to check if you dreaming and hone your skills.")
                 .setSmallIcon(R.drawable.ic_airline_seat_individual_suite_black_24dp)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentIntent(resultPendingIntent);
         return notification;
     }
 
