@@ -48,6 +48,8 @@
         <activity android:name=".RCUpdateActivity" />
         <activity android:name=".LDEUpdateActivity" />
         <activity android:name=".InstructionActivity"></activity>
+        <receiver android:name=".ChannelOneAlarm"/>
+        <receiver android:name=".ChannelTwoAlaram"/>
     </application>
 
 </manifest>
