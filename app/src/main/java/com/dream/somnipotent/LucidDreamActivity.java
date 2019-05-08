@@ -71,6 +71,9 @@ public class LucidDreamActivity extends AppCompatActivity {
 
         view();//calling view method
 
+        FloatingActionButton debugButton = (FloatingActionButton) findViewById(R.id.debugButton);
+        debugButton.hide();
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

@@ -47,7 +47,7 @@ public class NotificationHelper extends ContextWrapper {
 
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Wakey Wakey")
-                .setContentText("Make sure you remember to log your dream!")
+                .setContentText("Make sure you remember to log your dreams !")
                 .setSmallIcon(R.drawable.ic_wb_sunny_black_24dp)
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setContentIntent(resultPendingIntent);
@@ -77,7 +77,7 @@ public class NotificationHelper extends ContextWrapper {
 
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Time for bed soon")
-                .setContentText("Try out a lucid dream exercise before bed")
+                .setContentText("Try out a lucid dream exercise before bed.")
                 .setSmallIcon(R.drawable.ic_airline_seat_individual_suite_black_24dp)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(resultPendingIntent);
@@ -107,7 +107,7 @@ public class NotificationHelper extends ContextWrapper {
 
         NotificationCompat.Builder notification = new NotificationCompat.Builder(getApplicationContext(), channelID)
                 .setContentTitle("Check Reality!")
-                .setContentText("Use a reality check to check if you dreaming and hone your skills.")
+                .setContentText("Use a reality check to check if you dreaming.")
                 .setSmallIcon(R.drawable.ic_airline_seat_individual_suite_black_24dp)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(resultPendingIntent);
